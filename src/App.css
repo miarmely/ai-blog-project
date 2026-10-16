@@ -1,0 +1,24 @@
+:root {
+  --dash-color: black;
+
+}
+
+.dash {
+  display: inline-block;
+}
+
+.one-dash {
+  height: 1px;
+  background-color: var(--dash-color);
+}
+
+.two-dash {
+  height: 3px;
+  border-top: 1px solid var(--dash-color);
+
+  &>div {
+    width: 50%;
+    height: 100%;
+    border-bottom: 1px solid var(--dash-color);
+  }
+}
