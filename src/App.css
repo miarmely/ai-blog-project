@@ -1,24 +1,60 @@
 :root {
-  --dash-color: black;
+  --color-1: black;
+  --color-2: white;
+  --color-3: gray;
+  --color-4: #646464;
 
+  --bar-menu-color: !important;
 }
 
-.dash {
-  display: inline-block;
+#root {
+  &>#latest-news-navbar {}
+
+  &>#content {
+    position: relative;
+
+    &>#main-navbar {
+      z-index: 5 !important;
+    }
+
+    &>#main-content {
+      padding-top: calc(var(--main-navbar-padding-t) + var(--main-navbar-height) + var(--main-navbar-padding-b));
+      z-index: -5 !important;
+    }
+  }
 }
 
-.one-dash {
-  height: 1px;
-  background-color: var(--dash-color);
+#root.dark {
+  background-color: var(--color-1);
+  color: var(--color-2);
 }
 
-.two-dash {
-  height: 3px;
-  border-top: 1px solid var(--dash-color);
+/* Small Laptop: 1024px+ */
+@media(min-width:1024px) {
 
-  &>div {
-    width: 50%;
-    height: 100%;
-    border-bottom: 1px solid var(--dash-color);
+  #latest-news-navbar,
+  #main-navbar {
+    padding-right: 5% !important;
+    padding-left: 5% !important;
+  }
+}
+
+/* Laptop | Large Laptop: 768px+ */
+@media(min-width:1280px) {
+
+  #latest-news-navbar,
+  #main-navbar {
+    padding-right: 10% !important;
+    padding-left: 10% !important;
+  }
+}
+
+/* Ultra Wide */
+@media(min-width:1920px) {
+
+  #latest-news-navbar,
+  #main-navbar {
+    padding-right: 15% !important;
+    padding-left: 15% !important;
   }
 }

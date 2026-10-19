@@ -1,76 +1,68 @@
-#main-navbar {
-    --color: white;
-    --bg-color: black;
-    overflow-x: hidden;
+/* variables */
+:root {
+    --main-navbar-height: 100px;
+    --main-navbar-padding-t: 30px;
+    --main-navbar-padding-b: 30px;
+}
 
+/* Default */
+#main-navbar {
+    width: stretch;
+    height: var(--main-navbar-height);
+    padding-top: var(--main-navbar-padding-t);
+    padding-bottom: var(--main-navbar-padding-b);
+    position: absolute;
     display: flex;
     justify-content: space-between;
-    padding: 20px 10%;
-    gap: 100px;
-    background-color: var(--bg-color);
-    color: var(--color);
+    align-items: flex-start;
+    color: var(--color-1);
+    background-color: var(--color-2);
 
-    &>.nav-left {
-        --vertical-line-space: 10px;
-
-        display: flex;
-        align-items: center;
-        gap: var(--vertical-line-space);
-
-        h2,
-        h4 {
-            color: var(--color);
-            margin: 0;
-        }
-
-        h4 {
-            border-left: 1px solid var(--color);
-            padding-left: var(--vertical-line-space);
+    &>.logo {
+        & img {
+            width: 300px;
         }
     }
 
-    &>.nav-right {
+    &>.menus {}
+
+    &>.search {
+        padding: 20px 0px;
         display: flex;
-        gap: 30px;
-        align-items: center;
+        gap: 20px;
+    }
 
-        &>.info-text {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            & .one-dash {
-                background-color: var(--color);
-            }
-
-            & .two-dash {
-                border-color: var(--color);
-
-                &>div {
-                    border-color: var(--color);
-                }
-            }
-        }
-
-        &>.social-media-icon-box {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-
-            &>.social-media-icon {
-                scale: 1;
-                filter: brightness(0) invert(1);
-            }
-
-
-
-        }
+    & .bar-menu-box {
+        --bar-menu-bg-color: var(--color-2);
+        --bar-menu-color: var(--color-1);
+        --bar-submenu-border-color: var(--color-3);
+        --bar-accordion-menu-icon-color: var(--color-3);
     }
 }
 
-@media(max-width:300px) {
+#root.dark #main-navbar {
+    color: var(--color-2);
+    background-color: var(--color-1);
 
-    #main-navbar {
-        flex-wrap: wrap;
+    & .bar-menu-box {
+        --bar-menu-bg-color: var(--color-1);
+        --bar-menu-color: var(--color-2);
+        --bar-submenu-border-color: var(--color-3);
+        --bar-accordion-menu-icon-color: var(--color-3);
     }
+}
+
+/* Small Laptop: 1024px+ */
+@media(min-width:1024px) {
+    #main-navbar {}
+}
+
+/* Laptop | Large Laptop: 768px+ */
+@media(min-width:1280px) {
+    #main-navbar {}
+}
+
+/* Ultra Wide */
+@media(min-width:1920px) {
+    #main-navbar {}
 }

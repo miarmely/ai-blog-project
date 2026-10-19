@@ -1,90 +1,73 @@
-import { Children, cloneElement, isValidElement, type ReactNode } from "react";
-import { OneDash } from "../lib/miar-dash/OneDash";
-import "./Navbar.css";
+import { MenuIcon, MoonIcon, SearchIcon } from "lucide-react";
+import "./Navbar.css"
+import { BarMenu, BarMenuBox } from "../miar/miar-bar-menu/BarMenu";
 
-interface SocialMediaIconBoxProps {
-    children: ReactNode,
-    scale?: number,  // scale of all childrens
-    gap?: string
-}
+export function Navbar() {
+    var logoImg = document.getElementById("root")?.classList.contains("dark") ?
+        <img src="/website-logos/miar-news-navbar-dark.svg" />
+        : <img src="/website-logos/miar-news-navbar.svg" />
 
-interface SocialMediaIconProps {
-    name: string,
-    scale?: number,
-}
-
-function SocialMediaIconBox({
-    children,
-    scale,
-    gap
-}: SocialMediaIconBoxProps) {
-    // add "size" prop to all childrens (if childrens don't have special "size" prop)
-    if (children && scale)
-        children = Children.map(children, (child: ReactNode) => {
-            if (isValidElement<SocialMediaIconProps>(child)
-                && !child.props.scale)
-                child = cloneElement(child, {
-                    ...child.props,
-                    scale
-                })
-
-            return child;
-        })
-
-    return (
-        <div
-            className="social-media-icon-box"
-            style={gap ?
-                { gap }
-                : {}  // add default values from css
-            }
-        >
-            {children}
-        </div >
-    );
-}
-
-function SocialMediaIcon({
-    name,
-    scale
-}: SocialMediaIconProps) {
-    return (
-        <div className="social-media-icon">
-            <img
-                src={`/social-media-icons/${name.toLowerCase()}.svg`}
-                alt={name}
-                style={scale ?
-                    { scale }
-                    : {}  // add default values from css
-                }
-            />
-        </div>
-    );
-}
-
-export default function Navbar() {
     return (
         <nav id="main-navbar">
-            <div className='nav-left'>
-                <h2>LATEST NEWS</h2>
-                <h4>Incredible events happened on AI side.</h4>
+            <div className="logo">
+                {logoImg}
             </div>
 
-            <div className='nav-right'>
-                <div className="info-text">
-                    <span>Follow Us</span>
-                    <OneDash width="70px" />
-                </div>
+            <BarMenuBox boxType="horizontal">
+                <BarMenu name="Home" href="#">
+                    <BarMenu name="Home 1" href="#">
+                        <BarMenu name="Home 2" href="#"></BarMenu>
 
-                <SocialMediaIconBox scale={1.1}>
-                    <SocialMediaIcon name="instagram" />
-                    <SocialMediaIcon name="x" />
-                    <SocialMediaIcon name="facebook" />
-                    <SocialMediaIcon name="youtube" />
-                    <SocialMediaIcon name="pinterest" />
-                    <SocialMediaIcon name="linkedin" />
-                </SocialMediaIconBox>
+                        <BarMenu name="Home 3" href="#">
+                            <BarMenu name="Home 2" href="#"></BarMenu>
+                            <BarMenu name="Home 3" href="#"></BarMenu>
+                        </BarMenu>
+
+                        <BarMenu name="Home 3" href="#">
+                            <BarMenu name="Home 2" href="#"></BarMenu>
+                            <BarMenu name="Home 3" href="#"></BarMenu>
+                        </BarMenu>
+
+                        <BarMenu name="Home 3" href="#"></BarMenu>
+                    </BarMenu>
+
+                    <BarMenu name="Home 2" href="#"></BarMenu>
+                    <BarMenu name="Home 3" href="#"></BarMenu>
+                </BarMenu>
+
+                <BarMenu name="Pages" href="#"></BarMenu>
+
+                <BarMenu name="Categories" href="#">
+                    <BarMenu name="Home 1" href="#">
+                        <BarMenu name="Home 2" href="#"></BarMenu>
+
+                        <BarMenu name="Home 3" href="#">
+                            <BarMenu name="Home 2" href="#"></BarMenu>
+                            <BarMenu name="Home 3" href="#"></BarMenu>
+                        </BarMenu>
+
+                        <BarMenu name="Home 3" href="#">
+                            <BarMenu name="Home 2" href="#"></BarMenu>
+                            <BarMenu name="Home 3" href="#"></BarMenu>
+                        </BarMenu>
+
+                        <BarMenu name="Home 3" href="#"></BarMenu>
+                    </BarMenu>
+
+                    <BarMenu name="Home 2" href="#"></BarMenu>
+                    <BarMenu name="Home 3" href="#"></BarMenu>
+                </BarMenu>
+
+                <BarMenu name="Blog" href="#"></BarMenu>
+                <BarMenu name="Posts" href="#"></BarMenu>
+            </BarMenuBox>
+
+            <div className="search">
+                <MoonIcon />
+                <SearchIcon />
+                <button type="button">Sign In</button>
+                <MenuIcon />
             </div>
-        </nav >
+        </nav>
     );
 }

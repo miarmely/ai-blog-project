@@ -1,10 +1,22 @@
 import './App.css'
-import Navbar from './components/navbar/Navbar'
+import LatestNews from './components/latest-news/LatestNews'
+import { Navbar } from './components/navbar/Navbar'
 
 function App() {
   return (
     <>
-      <Navbar />
+      <LatestNews />
+
+      <div id="content">
+        <Navbar />
+
+        <div id='main-content'>
+          <div>Hello</div>
+          <div>World</div>
+          <div>I Am Mert Akdemir.</div>
+        </div>
+      </div>
+
     </>
   )
 }

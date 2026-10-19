@@ -1,3 +1,5 @@
+import "./Dash.css";
+
 export interface TwoDashProps {
     width: string,
     height?: string

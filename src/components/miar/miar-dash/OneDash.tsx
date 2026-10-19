@@ -1,5 +1,7 @@
+import "./Dash.css";
+
 export interface OneDashProps {
-    width: string
+    width?: string
 }
 
 export function OneDash({
@@ -8,7 +10,11 @@ export function OneDash({
     return (
         <div
             className="dash one-dash"
-            style={{ width }}>
+            style={width ?
+                { width }
+                : {}  // add default values from css
+            }
+        >
         </div>
     );
 }

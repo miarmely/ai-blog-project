@@ -1,0 +1,186 @@
+:root {
+    /* ---------  1) SIDEBAR ----------*/
+
+    --sidebar-min-width: 200px;
+    --sidebar-max-width: 600px;
+    --sidebar-padding: 10px;
+    --sidebar-border-color: black;
+
+
+    /* --------- 1.1) LOGO ----------*/
+    --sidebar-logo-direction: ltr;
+
+    --sidebar-logo-img-width: 400px;
+    --sidebar-logo-img-height: 100px;
+
+    --sidebar-logo-text-font-size: 1.75em;
+    --sidebar-logo-text-font-family: Arial, Helvetica, sans-serif;
+    --sidebar-logo-text-color: black;
+    --sidebar-logo-text-align-h: left;
+    --sidebar-logo-text-align-v: center;
+    --sidebar-logo-text-margin-l: 20px;
+    --sidebar-logo-text-margin-r: 0px;
+
+    /* change place of image and text (ltr: img + text || rtl: text + img)*/
+    --sidebar-logo-img-and-text-direction: var(--sidebar-logo-direction);
+    /* space between text and img */
+    --sidebar-logo-img-and-text-gap: 15px;
+
+    --sidebar-logo-menu-icon-size: 30px;
+    --sidebar-logo-menu-icon-margin-l: 10px;
+    /* space between "menu icon" and "img + text" */
+    --sidebar-logo-menu-icon-and-others-gap: 20px;
+
+
+    /* -------- 1.2) MENUS ----------*/
+
+    --sidebar-menu-direction: ltr;
+    --sidebar-menu-color: black;
+    --sidebar-menu-font-size: 1.35em;
+    --sidebar-menu-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* padding start of root "ul.bar-menu-container"s */
+    --sidebar-menu-padding-inline-start: 0px;
+    /* padding of root "li.barmenu"s */
+    --sidebar-menu-padding: 18px 15px;
+    --sidebar-menu-icon-and-text-gap: 15px;
+    --sidebar-menu-icon-size: 23px;
+
+    /* -------- 1.2.1) ROOT MENUS ----------*/
+
+    --sidebar-rootmenu-direction: var(--sidebar-menu-direction);
+    /* padding start of root "ul.bar-menu-container"s */
+    --sidebar-rootmenu-padding-inline-start: var(--sidebar-menu-padding-inline-start);
+    /* padding of root "li.barmenu"s */
+    --sidebar-rootmenu-padding: var(--sidebar-menu-padding);
+    --sidebar-rootmenu-color: var(--sidebar-menu-color);
+    --sidebar-rootmenu-font-size: var(--sidebar-menu-font-size);
+    --sidebar-rootmenu-font-family: var(--sidebar-menu-font-family);
+    --sidebar-rootmenu-icon-and-text-gap: var(--sidebar-menu-icon-and-text-gap);
+    --sidebar-rootmenu-icon-and-text-direction: var(--sidebar-rootmenu-direction);
+    --sidebar-rootmenu-icon-width: var(--sidebar-menu-icon-size);
+    --sidebar-rootmenu-icon-height: var(--sidebar-menu-icon-size);
+
+
+    /* -------- 1.2.2) SUBMENUS  ----------*/
+
+    --sidebar-submenu-direction: var(--sidebar-menu-direction);
+    /* padding start of "bar-submenu-container" */
+    --sidebar-submenu-padding-inline-start: 30px;
+    --sidebar-submenu-padding: 12px 10px;
+    --sidebar-submenu-color: var(--sidebar-menu-color);
+    --sidebar-submenu-font-size: 1.2em;
+    --sidebar-submenu-font-family: var(--sidebar-menu-font-family);
+    --sidebar-submenu-icon-and-text-gap: var(--sidebar-menu-icon-and-text-gap);
+    --sidebar-submenu-icon-and-text-direction: var(--sidebar-submenu-direction);
+    --sidebar-submenu-icon-width: calc(var(--sidebar-menu-icon-size) / 1.25);
+    --sidebar-submenu-icon-height: calc(var(--sidebar-menu-icon-size) / 1.25);
+
+
+    /* -------- 1.2.3) ACCORDION MENUS ----------*/
+
+    --sidebar-accordion-menu-icon-width: 20px;
+    --sidebar-accordion-menu-icon-height: 20px;
+    --sidebar-accordion-menu-animation-duration: 0.4s;
+    /* animation start point on x axis*/
+    --sidebar-accordion-menu-animation-translate-x: 25%;
+    /* 1==right | -1==left (on x axis) */
+    --sidebar-accordion-menu-animation-opening-start-point-x: -1;
+    /* 1==right | -1==left (on x axis)*/
+    --sidebar-accordion-menu-animation-closing-start-point-x: -1;
+}
+
+aside {
+    border: 1px solid var(--sidebar-border-color);
+    min-width: var(--sidebar-min-width);
+    max-width: var(--sidebar-max-width);
+    overflow-x: auto;
+
+    /* LOGO + MENUS */
+    &>section,
+    &>div {
+        padding: var(--sidebar-padding);
+    }
+
+    /* LOGO */
+    &>section.bar-logo-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--sidebar-logo-menu-icon-and-others-gap);
+        direction: var(--sidebar-logo-direction);
+        border-top: 1px solid var(--sidebar-border-color);
+        border-bottom: 1px solid var(--sidebar-border-color);
+        font-size: 15px;
+
+        /* img + text */
+        &>div {
+            display: flex;
+            direction: var(--sidebar-logo-img-and-text-direction);
+            gap: var(--sidebar-logo-img-and-text-gap);
+
+            & img {
+                width: var(--sidebar-logo-img-width);
+                height: var(--sidebar-logo-img-height);
+            }
+
+            & h2 {
+                margin-left: 0px !important;
+                margin-right: 0px !important;
+                margin-bottom: 0px !important;
+                width: 100%;
+                margin-left: var(--sidebar-logo-text-margin-l);
+                margin-right: var(--sidebar-logo-text-margin-r);
+                text-align: var(--sidebar-logo-text-align-h);
+                align-content: var(--sidebar-logo-text-align-v);
+                color: var(--sidebar-logo-text-color);
+                font-size: var(--sidebar-logo-text-font-size);
+                font-family: var(--sidebar-logo-text-font-family);
+            }
+        }
+
+        /* menu icon */
+        &>svg.lucide {
+            width: var(--sidebar-logo-menu-icon-size);
+            height: var(--sidebar-logo-menu-icon-size);
+
+            &:hover {
+                cursor: pointer;
+                scale: 1.1;
+            }
+        }
+    }
+
+    &.collapsed>.bar-logo-box {
+        display: flex;
+        flex-direction: row;
+        border-top: 1px solid var(--sidebar-border-color);
+        border-bottom: 1px solid var(--sidebar-border-color);
+        font-size: 15px;
+
+        &>div {
+            display: flex;
+            direction: var(--sidebar-logo-img-and-text-direction);
+            gap: var(--sidebar-logo-img-and-text-gap);
+
+            & img {
+                width: calc(var(--sidebar-logo-img-width) / 1.75);
+                height: calc(var(--sidebar-logo-img-height) / 1.75);
+            }
+
+            & h2 {
+                display: none;
+            }
+        }
+
+        /* sidebar menu icon */
+        &>img {
+            margin-left: 20px;
+            width: 25px;
+
+            &:hover {
+                cursor: pointer;
+                scale: 1.1;
+            }
+        }
+    }
+}
