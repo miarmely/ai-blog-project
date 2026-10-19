@@ -1,75 +1,52 @@
-# React + TypeScript + Vite
+# Miar News
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Miar News** is an AI-powered news and blogging platform designed to bring together human-written content and AI-generated articles in one place.
 
-Currently, two official plugins are available:
+The project aims to provide a modern, responsive reading experience for news, insights, and blog posts across a variety of topics.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Project Goals
 
-## React Compiler
+- Publish original news articles and blog posts.
+- Explore AI-assisted and AI-generated content creation.
+- Organize articles into categories for easy discovery.
+- Deliver a clean, responsive experience across desktop, tablet, and mobile devices.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **React.js** — user interface
+- **TypeScript** — type-safe frontend development
+- **Vite** — development tooling and build system
+- **CSS** — responsive layouts and styling
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Planned Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- News and blog article pages
+- Categories and navigation menus
+- AI-generated or AI-assisted articles
+- Search and content discovery
+- Light and dark themes
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+> **Status:** Work in progress. Features listed above are project goals and may not yet be available.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
 
+### Prerequisites
+
+- Node.js and npm
+
+### Run locally
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Open the local URL displayed in your terminal.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Vision
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Miar News aims to combine editorial creativity with artificial intelligence, making it easier to create, publish, and explore informative content.
 
-```
+## License
+
+No license has been specified yet.
