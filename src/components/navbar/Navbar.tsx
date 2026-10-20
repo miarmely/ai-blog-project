@@ -1,16 +1,33 @@
-import { MenuIcon, MoonIcon, SearchIcon } from "lucide-react";
 import "./Navbar.css"
+import { MenuIcon, MoonIcon, SearchIcon, SunIcon, type LucideIcon } from "lucide-react";
 import { BarMenu, BarMenuBox } from "../miar/miar-bar-menu/BarMenu";
+import React, { useEffect, useState, type ReactNode } from "react";
 
-export function Navbar() {
-    var logoImg = document.getElementById("root")?.classList.contains("dark") ?
-        <img src="/website-logos/miar-news-navbar-dark.svg" />
-        : <img src="/website-logos/miar-news-navbar.svg" />
+export interface NavbarProps {
+    logoImgSrc: string,
+    setLogoImgSrc: React.Dispatch<React.SetStateAction<string>>,
+    isDarkModeActive: boolean,
+    setIsDarkModeActive: React.Dispatch<React.SetStateAction<boolean>>
+    darkModeIcon: React.JSX.Element,
+    setDarkModeIcon: React.Dispatch<React.SetStateAction<React.JSX.Element>>
+}
+
+export default function Navbar({
+    logoImgSrc,
+    setLogoImgSrc,
+    isDarkModeActive,
+    setIsDarkModeActive,
+    darkModeIcon,
+    setDarkModeIcon
+}: NavbarProps) {
+    const toggleSidebar = (event: React.MouseEvent): void => {
+
+    };
 
     return (
         <nav id="main-navbar">
             <div className="logo">
-                {logoImg}
+                <img src={logoImgSrc} />
             </div>
 
             <BarMenuBox boxType="horizontal">
@@ -63,9 +80,9 @@ export function Navbar() {
             </BarMenuBox>
 
             <div className="search">
-                <MoonIcon />
+                {darkModeIcon}
                 <SearchIcon />
-                <button type="button">Sign In</button>
+                <button className="btn-signin" type="button">Sign In</button>
                 <MenuIcon />
             </div>
         </nav>

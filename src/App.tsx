@@ -1,14 +1,48 @@
 import './App.css'
+import { useEffect, useState } from 'react';
 import LatestNews from './components/latest-news/LatestNews'
-import { Navbar } from './components/navbar/Navbar'
+import Navbar from './components/navbar/Navbar'
+import Sidebar from './components/sidebar/Sidebar'
+import { MoonIcon, SunIcon } from 'lucide-react';
 
 function App() {
+  const root = document.getElementById("root");
+  const [isDarkModeActive, setIsDarkModeActive] = useState(false);
+  const [logoImgSrc, setLogoImgSrc] = useState<string>();
+  const [darkModeIcon, setDarkModeIcon] = useState<React.JSX.Element>();
+
+  // set "dark/white" mode
+  useEffect(() => {
+    // dark mode
+    if (isDarkModeActive) {
+      root?.classList.add("dark");
+
+      setLogoImgSrc("/website-logos/miar-news-navbar-dark.svg");
+      setDarkModeIcon(<SunIcon onClick={() => setIsDarkModeActive(prev => !prev)} />)
+    }
+
+    // white mode
+    else {
+      root?.classList.remove("dark");
+
+      setLogoImgSrc("/website-logos/miar-news-navbar.svg");
+      setDarkModeIcon(<MoonIcon onClick={() => setIsDarkModeActive(prev => !prev)} />)
+    }
+  }, [isDarkModeActive])
+
   return (
     <>
       <LatestNews />
 
       <div id="content">
-        <Navbar />
+        <Navbar
+          logoImgSrc={logoImgSrc}
+          setLogoImgSrc={setLogoImgSrc}
+          isDarkModeActive={isDarkModeActive}
+          setIsDarkModeActive={setIsDarkModeActive}
+          darkModeIcon={darkModeIcon}
+          setDarkModeIcon={setDarkModeIcon}
+        />
 
         <div id='main-content'>
           <div>Hello</div>
@@ -17,6 +51,7 @@ function App() {
         </div>
       </div>
 
+      {/* <Sidebar /> */}
     </>
   )
 }

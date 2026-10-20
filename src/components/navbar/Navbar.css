@@ -19,6 +19,8 @@
     background-color: var(--color-2);
 
     &>.logo {
+        user-select: none;
+
         & img {
             width: 300px;
         }
@@ -30,6 +32,13 @@
         padding: 20px 0px;
         display: flex;
         gap: 20px;
+        user-select: none;
+
+        &>.lucide:hover,
+        &>.btn-signin:hover {
+            cursor: pointer;
+            scale: 1.1;
+        }
     }
 
     & .bar-menu-box {

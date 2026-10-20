@@ -1,15 +1,6 @@
-import { type LucideIcon } from "lucide-react";
 import Logo from "./Logo";
 import { BarMenu, BarMenuBox } from "../miar/miar-bar-menu/BarMenu";
 import "./css/Sidebar.css";
-
-export interface BarMenu {
-    name: string,
-    href: string,
-    iconClass?: string,
-    LucideIcon?: LucideIcon
-    Submenus?: BarMenu[]
-}
 
 interface SidebarProps {
     logoImgSrc: string,
