@@ -40,25 +40,6 @@
             scale: 1.1;
         }
     }
-
-    & .bar-menu-box {
-        --bar-menu-bg-color: var(--color-2);
-        --bar-menu-color: var(--color-1);
-        --bar-submenu-border-color: var(--color-3);
-        --bar-accordion-menu-icon-color: var(--color-3);
-    }
-}
-
-#root.dark #main-navbar {
-    color: var(--color-2);
-    background-color: var(--color-1);
-
-    & .bar-menu-box {
-        --bar-menu-bg-color: var(--color-1);
-        --bar-menu-color: var(--color-2);
-        --bar-submenu-border-color: var(--color-3);
-        --bar-accordion-menu-icon-color: var(--color-3);
-    }
 }
 
 /* Small Laptop: 1024px+ */

@@ -10,7 +10,7 @@ export default function Logo({
     logoText
 }: LogoProps) {
     return (
-        <section className='bar-logo-box'>
+        <div className='bar-logo-box'>
             <div>
                 <img src={logoImgSrc} />
 
@@ -18,6 +18,6 @@ export default function Logo({
             </div>
 
             <MenuIcon />
-        </section>
+        </div>
     );
 }

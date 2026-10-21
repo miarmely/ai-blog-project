@@ -1,10 +1,11 @@
-/* Variables */
-.bar-menu-box {
+/* all variables */
+:root {
     /* -------- 1.2) MENUS ----------*/
 
     --bar-menu-direction: ltr;
     --bar-menu-color: black;
     --bar-menu-bg-color: white;
+    --bar-menu-border-color: gray;
     --bar-menu-font-size: 1.35em;
     --bar-menu-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     /* padding start of root "ul.bar-menu-container"s */
@@ -12,8 +13,8 @@
     /* padding of "li.barmenu"s */
     --bar-menu-padding-t: 18px;
     --bar-menu-padding-b: 18px;
-    --bar-menu-padding-r: 15px;
-    --bar-menu-padding-l: 15px;
+    --bar-menu-padding-r: 20px;
+    --bar-menu-padding-l: 20px;
     --bar-menu-icon-and-text-gap: 15px;
     --bar-menu-icon-size: 23px;
 
@@ -31,6 +32,7 @@
     --bar-rootmenu-icon-and-text-direction: var(--bar-rootmenu-direction);
     --bar-rootmenu-icon-width: var(--bar-menu-icon-size);
     --bar-rootmenu-icon-height: var(--bar-menu-icon-size);
+    --bar-rootmenu-border-color: var(--bar-menu-border-color);
 
 
     /* -------- 1.2.2) SUBMENUS  ----------*/
@@ -46,7 +48,7 @@
     --bar-submenu-icon-and-text-direction: var(--bar-submenu-direction);
     --bar-submenu-icon-width: calc(var(--bar-menu-icon-size) / 1.25);
     --bar-submenu-icon-height: calc(var(--bar-menu-icon-size) / 1.25);
-    --bar-submenu-border-color: gray;
+    --bar-submenu-border-color: var(--bar-menu-border-color);
 
 
     /* -------- 1.2.3) ACCORDION MENUS ----------*/
@@ -80,7 +82,7 @@
         /* bar-menu + bar-submenu-container */
         &>li {
             list-style-type: none;
-            border: 1px solid black;
+            border-bottom: 1px solid var(--bar-rootmenu-border-color);
         }
 
         &>li.bar-menu {
@@ -159,6 +161,7 @@
                 padding: var(--bar-submenu-padding);
                 font-size: var(--bar-submenu-font-size);
                 font-family: var(--bar-submenu-font-family);
+                border-left: 1px solid var(--bar-rootmenu-border-color);
 
                 /* icon and text */
                 &>div {
@@ -202,7 +205,7 @@
 }
 
 /* horizontal menus*/
-.bar-menu-box.horizontal {
+& .bar-menu-box.horizontal {
     flex-direction: row;
 
     /* root + submenus */
@@ -210,43 +213,41 @@
 
         /* bar-menu + bar-submenu-container */
         &>li {
-            border: none;
             background-color: var(--bar-menu-bg-color);
-        }
-
-        &>li.bar-submenu-container {
-            border-left: 1px solid var(--bar-submenu-border-color);
+            border-bottom: none;
         }
     }
 
     /* root menus */
     &>ul.bar-menu-container {
 
-        /* "first submenus" of root menus */
+        /* first "submenu container" of root menus */
         &>li.bar-submenu-container {
-            border-left: none;
+            border-left: none !important;
 
             &>ul.bar-menu-container {
                 transform: none;
+
+                &>li {
+                    margin: 0px;
+                }
             }
         }
     }
 
     /* submenus */
     & li.bar-submenu-container {
+        border-left: 1px solid var(--bar-submenu-border-color);
+
         &>ul.bar-menu-container {
             padding-inline-start: 0px;
             transform: translateX(var(--bar-submenu-padding-inline-start));
+
+            &>li.bar-menu {
+                border-left: none;
+            }
         }
     }
-}
-
-/* dark mode */
-#root.dark .bar-menu-box {
-    --bar-menu-bg-color: black;
-    --bar-menu-color: white;
-    --bar-submenu-border-color: gray;
-    --bar-accordion-menu-icon-color: gray;
 }
 
 @keyframes submenu-opening {

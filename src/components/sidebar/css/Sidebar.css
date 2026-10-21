@@ -9,10 +9,8 @@
 
     /* --------- 1.1) LOGO ----------*/
     --sidebar-logo-direction: ltr;
-
     --sidebar-logo-img-width: 400px;
     --sidebar-logo-img-height: 100px;
-
     --sidebar-logo-text-font-size: 1.75em;
     --sidebar-logo-text-font-family: Arial, Helvetica, sans-serif;
     --sidebar-logo-text-color: black;
@@ -25,68 +23,10 @@
     --sidebar-logo-img-and-text-direction: var(--sidebar-logo-direction);
     /* space between text and img */
     --sidebar-logo-img-and-text-gap: 15px;
-
     --sidebar-logo-menu-icon-size: 30px;
     --sidebar-logo-menu-icon-margin-l: 10px;
     /* space between "menu icon" and "img + text" */
     --sidebar-logo-menu-icon-and-others-gap: 20px;
-
-
-    /* -------- 1.2) MENUS ----------*/
-
-    --sidebar-menu-direction: ltr;
-    --sidebar-menu-color: black;
-    --sidebar-menu-font-size: 1.35em;
-    --sidebar-menu-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    /* padding start of root "ul.bar-menu-container"s */
-    --sidebar-menu-padding-inline-start: 0px;
-    /* padding of root "li.barmenu"s */
-    --sidebar-menu-padding: 18px 15px;
-    --sidebar-menu-icon-and-text-gap: 15px;
-    --sidebar-menu-icon-size: 23px;
-
-    /* -------- 1.2.1) ROOT MENUS ----------*/
-
-    --sidebar-rootmenu-direction: var(--sidebar-menu-direction);
-    /* padding start of root "ul.bar-menu-container"s */
-    --sidebar-rootmenu-padding-inline-start: var(--sidebar-menu-padding-inline-start);
-    /* padding of root "li.barmenu"s */
-    --sidebar-rootmenu-padding: var(--sidebar-menu-padding);
-    --sidebar-rootmenu-color: var(--sidebar-menu-color);
-    --sidebar-rootmenu-font-size: var(--sidebar-menu-font-size);
-    --sidebar-rootmenu-font-family: var(--sidebar-menu-font-family);
-    --sidebar-rootmenu-icon-and-text-gap: var(--sidebar-menu-icon-and-text-gap);
-    --sidebar-rootmenu-icon-and-text-direction: var(--sidebar-rootmenu-direction);
-    --sidebar-rootmenu-icon-width: var(--sidebar-menu-icon-size);
-    --sidebar-rootmenu-icon-height: var(--sidebar-menu-icon-size);
-
-
-    /* -------- 1.2.2) SUBMENUS  ----------*/
-
-    --sidebar-submenu-direction: var(--sidebar-menu-direction);
-    /* padding start of "bar-submenu-container" */
-    --sidebar-submenu-padding-inline-start: 30px;
-    --sidebar-submenu-padding: 12px 10px;
-    --sidebar-submenu-color: var(--sidebar-menu-color);
-    --sidebar-submenu-font-size: 1.2em;
-    --sidebar-submenu-font-family: var(--sidebar-menu-font-family);
-    --sidebar-submenu-icon-and-text-gap: var(--sidebar-menu-icon-and-text-gap);
-    --sidebar-submenu-icon-and-text-direction: var(--sidebar-submenu-direction);
-    --sidebar-submenu-icon-width: calc(var(--sidebar-menu-icon-size) / 1.25);
-    --sidebar-submenu-icon-height: calc(var(--sidebar-menu-icon-size) / 1.25);
-
-
-    /* -------- 1.2.3) ACCORDION MENUS ----------*/
-
-    --sidebar-accordion-menu-icon-width: 20px;
-    --sidebar-accordion-menu-icon-height: 20px;
-    --sidebar-accordion-menu-animation-duration: 0.4s;
-    /* animation start point on x axis*/
-    --sidebar-accordion-menu-animation-translate-x: 25%;
-    /* 1==right | -1==left (on x axis) */
-    --sidebar-accordion-menu-animation-opening-start-point-x: -1;
-    /* 1==right | -1==left (on x axis)*/
-    --sidebar-accordion-menu-animation-closing-start-point-x: -1;
 }
 
 aside {
@@ -96,13 +36,12 @@ aside {
     overflow-x: auto;
 
     /* LOGO + MENUS */
-    &>section,
     &>div {
         padding: var(--sidebar-padding);
     }
 
     /* LOGO */
-    &>section.bar-logo-box {
+    &>.bar-logo-box {
         display: flex;
         align-items: center;
         justify-content: space-between;

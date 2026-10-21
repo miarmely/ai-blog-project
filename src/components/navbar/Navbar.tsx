@@ -1,24 +1,18 @@
 import "./Navbar.css"
-import { MenuIcon, MoonIcon, SearchIcon, SunIcon, type LucideIcon } from "lucide-react";
+import { MenuIcon, SearchIcon } from "lucide-react";
 import { BarMenu, BarMenuBox } from "../miar/miar-bar-menu/BarMenu";
-import React, { useEffect, useState, type ReactNode } from "react";
+import React from "react";
+
+type Setter<T> = React.Dispatch<React.SetStateAction<T>>;
 
 export interface NavbarProps {
     logoImgSrc: string,
-    setLogoImgSrc: React.Dispatch<React.SetStateAction<string>>,
-    isDarkModeActive: boolean,
-    setIsDarkModeActive: React.Dispatch<React.SetStateAction<boolean>>
     darkModeIcon: React.JSX.Element,
-    setDarkModeIcon: React.Dispatch<React.SetStateAction<React.JSX.Element>>
 }
 
 export default function Navbar({
     logoImgSrc,
-    setLogoImgSrc,
-    isDarkModeActive,
-    setIsDarkModeActive,
-    darkModeIcon,
-    setDarkModeIcon
+    darkModeIcon
 }: NavbarProps) {
     const toggleSidebar = (event: React.MouseEvent): void => {
 
