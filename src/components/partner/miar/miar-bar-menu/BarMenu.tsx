@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { Menu as AccordionMenuIcon, type LucideIcon, icons } from "lucide-react"
+import { type LucideIcon, MenuIcon, icons } from "lucide-react"
 import { CaseConverter } from "../../../../libs/miar-converter";
 import "./BarMenu.css";
 
@@ -151,7 +151,7 @@ function AccordionMenu({
                     </div>
                 </div>
 
-                <AccordionMenuIcon />
+                <MenuIcon />
             </li>
 
             <li className="bar-submenu-container">

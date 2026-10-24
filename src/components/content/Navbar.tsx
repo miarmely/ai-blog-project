@@ -1,5 +1,5 @@
 import "./Navbar.css"
-import { MenuIcon, SearchIcon } from "lucide-react";
+import { BadgeInfoIcon, CircleQuestionMarkIcon, InfoIcon, MenuIcon, SearchIcon } from "lucide-react";
 import { BarMenu, BarMenuBox } from "../partner/miar/miar-bar-menu/BarMenu";
 import React from "react";
 import type { Setter } from "../../models/types";
@@ -21,7 +21,7 @@ export default function Navbar({
                 <img src={logoImgSrc} />
             </div>
 
-            <BarMenuBox boxType="vertical">
+            <BarMenuBox boxType="vertical" >
                 <BarMenu name="Home" href="#">
                     <BarMenu name="Home 1" href="#">
                         <BarMenu name="Home 2" href="#"></BarMenu>
@@ -75,7 +75,7 @@ export default function Navbar({
                 <SearchIcon />
                 <button className="btn-signin" type="button">Sign In</button>
 
-                <MenuIcon
+                <BadgeInfoIcon
                     className="sidebar-icon"
                     onClick={() => setIsSidebarOpen(prev => !prev)}
                 />

@@ -2,14 +2,15 @@
 :root {
     --main-navbar-height: 100px;
     --main-navbar-padding-t: 15px;
-    --main-navbar-padding-b: 30px;
+    --main-navbar-padding-b: 15px;
+    --main-navbar-padding-r: 10px;
+    --main-navbar-padding-l: 10px;
 }
 
 /* Default */
 #main-navbar {
     width: stretch;
-    padding-top: var(--main-navbar-padding-t);
-    padding-bottom: var(--main-navbar-padding-b);
+    padding: var(--main-navbar-padding-t) var(--main-navbar-padding-r) var(--main-navbar-padding-b) var(--main-navbar-padding-l);
     /* position: absolute; */
     display: flex;
     flex-direction: column;
@@ -23,6 +24,7 @@
     }
 
     &>.logo {
+        text-align: left;
         user-select: none;
 
         & img {
@@ -35,6 +37,7 @@
         padding: 20px 0px;
         display: flex;
         gap: 20px;
+        justify-content: left;
         user-select: none;
 
         &>.lucide:hover,
@@ -45,17 +48,93 @@
     }
 }
 
-/* Small Laptop: 1024px+ */
-@media(min-width:1024px) {
-    #main-navbar {}
+
+@media(max-width:119px) {
+    #main-navbar {
+        &>.logo {
+            & img {
+                width: 75px;
+            }
+        }
+    }
 }
 
-/* Laptop | Large Laptop: 768px+ */
-@media(min-width:1280px) {
-    #main-navbar {}
+@media(min-width:120px) {
+    #main-navbar {
+        &>.logo {
+            & img {
+                width: 100px;
+            }
+        }
+    }
 }
 
-/* Ultra Wide */
-@media(min-width:1920px) {
-    #main-navbar {}
+@media(min-width:150px) {
+    #main-navbar {
+        &>.logo {
+            & img {
+                width: 130px;
+            }
+        }
+    }
+}
+
+@media(min-width:170px) {
+    #main-navbar {
+        &>.logo {
+            & img {
+                width: 150px;
+            }
+        }
+    }
+}
+
+@media(min-width:200px) {
+    #main-navbar {
+        &>.logo {
+            & img {
+                width: 175px;
+            }
+        }
+    }
+}
+
+@media(min-width:230px) {
+    #main-navbar {
+        &>.logo {
+            & img {
+                width: 200px;
+            }
+        }
+    }
+}
+
+@media(min-width:260px) {
+    #main-navbar {
+        &>.logo {
+            & img {
+                width: 240px;
+            }
+        }
+    }
+}
+
+@media(min-width:290px) {
+    #main-navbar {
+        &>.logo {
+            & img {
+                width: 270px;
+            }
+        }
+    }
+}
+
+@media(min-width:350px) {
+    #main-navbar {
+        &>.logo {
+            & img {
+                width: 300px;
+            }
+        }
+    }
 }

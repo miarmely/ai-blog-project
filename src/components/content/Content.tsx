@@ -22,9 +22,7 @@ export default function Content({
             />
 
             <div id='main-content'>
-                <div>Hello</div>
-                <div>World</div>
-                <div>I Am Mert Akdemir.</div>
+
             </div>
         </div>
     );
