@@ -1,7 +1,7 @@
 import "./Sidebar.css";
 import Logo from "./Logo";
 import type { Setter } from "../../models/types";
-import { TwoDash } from "../miar/miar-dash/TwoDash";
+import { TwoDash } from "../partner/miar/miar-dash/TwoDash";
 import { MailIcon, MapPinIcon, PhoneCallIcon } from "lucide-react";
 import { GeneralInfo } from "./GeneralInfo";
 import { SocialMediaIcon, SocialMediaIconBox } from "../partner/SocialMediaIcon";

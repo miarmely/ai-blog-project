@@ -1,6 +1,6 @@
 import "./Navbar.css"
 import { MenuIcon, SearchIcon } from "lucide-react";
-import { BarMenu, BarMenuBox } from "../miar/miar-bar-menu/BarMenu";
+import { BarMenu, BarMenuBox } from "../partner/miar/miar-bar-menu/BarMenu";
 import React from "react";
 import type { Setter } from "../../models/types";
 
@@ -21,7 +21,7 @@ export default function Navbar({
                 <img src={logoImgSrc} />
             </div>
 
-            <BarMenuBox boxType="horizontal">
+            <BarMenuBox boxType="vertical">
                 <BarMenu name="Home" href="#">
                     <BarMenu name="Home 1" href="#">
                         <BarMenu name="Home 2" href="#"></BarMenu>

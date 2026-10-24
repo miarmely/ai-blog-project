@@ -1,22 +1,26 @@
 /* variables */
 :root {
     --main-navbar-height: 100px;
-    --main-navbar-padding-t: 30px;
+    --main-navbar-padding-t: 15px;
     --main-navbar-padding-b: 30px;
 }
 
 /* Default */
 #main-navbar {
     width: stretch;
-    height: var(--main-navbar-height);
     padding-top: var(--main-navbar-padding-t);
     padding-bottom: var(--main-navbar-padding-b);
-    position: absolute;
+    /* position: absolute; */
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     color: var(--color-1);
     background-color: var(--color-2);
+
+    &>div {
+        width: stretch;
+    }
 
     &>.logo {
         user-select: none;
@@ -26,7 +30,6 @@
         }
     }
 
-    &>.menus {}
 
     &>.search {
         padding: 20px 0px;

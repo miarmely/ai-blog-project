@@ -1,10 +1,11 @@
 import './App.css'
 import { useEffect, useRef, useState } from 'react';
 import LatestNews from './components/latest-news/LatestNews'
-import Navbar from './components/navbar/Navbar'
+import Navbar from './components/content/Navbar'
 import Sidebar from './components/sidebar/Sidebar'
 import { MoonIcon, SunIcon } from 'lucide-react';
 import type { Setter } from './models/types';
+import Content from './components/content/Content';
 
 function setDarkWhiteMode(
   root: HTMLElement,
@@ -117,19 +118,11 @@ function App() {
     <>
       <LatestNews />
 
-      <div id="content">
-        <Navbar
-          logoImgSrc={logoImgSrc!}
-          darkModeIcon={darkModeIcon!}
-          setIsSidebarOpen={setIsSidebarOpen}
-        />
-
-        <div id='main-content'>
-          <div>Hello</div>
-          <div>World</div>
-          <div>I Am Mert Akdemir.</div>
-        </div>
-      </div>
+      <Content
+        darkModeIcon={darkModeIcon}
+        logoImgSrc={logoImgSrc}
+        setIsSidebarOpen={setIsSidebarOpen}
+      />
 
       <Sidebar
         logoImgSrc={logoImgSrc}

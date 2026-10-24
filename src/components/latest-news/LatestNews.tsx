@@ -1,4 +1,4 @@
-import { OneDash } from "../miar/miar-dash/OneDash";
+import { OneDash } from "../partner/miar/miar-dash/OneDash";
 import "./LatestNews.css";
 import { SocialMediaIconBox, SocialMediaIcon } from "../partner/SocialMediaIcon";
 

@@ -21,13 +21,8 @@
   &>#content {
     position: relative;
 
-    &>#main-navbar {
-      z-index: 5 !important;
-    }
-
     &>#main-content {
-      padding-top: calc(var(--main-navbar-padding-t) + var(--main-navbar-height) + var(--main-navbar-padding-b));
-      z-index: -5 !important;
+      /* padding-top: calc(var(--main-navbar-padding-t) + var(--main-navbar-height) + var(--main-navbar-padding-b)); */
     }
   }
 }
@@ -39,6 +34,7 @@
   --bar-menu-bg-color: var(--color-1) !important;
   --bar-menu-border-color: var(--color-3) !important;
   --bar-accordion-menu-icon-color: var(--color-4) !important;
+  --bar-accordion-menu-box-shadow-color: var(--color-2) !important;
 
   --sidebar-color: var(--color-2) !important;
   --sidebar-bg-color: var(--color-1) !important;
@@ -62,6 +58,7 @@
   filter: grayscale(100%) opacity(50%);
 }
 
+/* ------------ RESPONSIVE DESIGN ------------*/
 /* Small Laptop: 1024px+ */
 @media(min-width:1024px) {
 

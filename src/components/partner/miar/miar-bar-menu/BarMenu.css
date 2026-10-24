@@ -14,7 +14,7 @@
     --bar-menu-padding-t: 18px;
     --bar-menu-padding-b: 18px;
     --bar-menu-padding-r: 20px;
-    --bar-menu-padding-l: 20px;
+    --bar-menu-padding-l: 10px;
     --bar-menu-icon-and-text-gap: 15px;
     --bar-menu-icon-size: 23px;
 
@@ -39,7 +39,7 @@
 
     --bar-submenu-direction: var(--bar-menu-direction);
     /* padding start of "bar-submenu-container" */
-    --bar-submenu-padding-inline-start: 30px;
+    --bar-submenu-padding-inline-start: 15px;
     --bar-submenu-padding: 10px var(--bar-menu-padding-r) 10px var(--bar-menu-padding-l);
     --bar-submenu-color: var(--bar-menu-color);
     --bar-submenu-font-size: 1.2em;
@@ -63,6 +63,8 @@
     --bar-accordion-menu-animation-opening-start-point-x: -1;
     /* 1==right | -1==left (on x axis)*/
     --bar-accordion-menu-animation-closing-start-point-x: -1;
+    /*box shadow color of accordion menus which its submenus has opened */
+    --bar-accordion-menu-box-shadow-color: gray;
 }
 
 /* Default: vertical menus */
@@ -86,7 +88,7 @@
 
         &>li.bar-menu {
             cursor: pointer;
-            border-bottom: 1px solid var(--bar-rootmenu-border-color);
+            /* border-bottom: 1px solid var(--bar-rootmenu-border-color); */
 
             /* icon and text */
             &>div {
@@ -143,11 +145,6 @@
                 }
             }
         }
-
-        /* first submenu container of root menus */
-        &>li.bar-submenu-container {
-            border-bottom: 1px solid var(--bar-submenu-border-color);
-        }
     }
 
     /* submenus */
@@ -166,7 +163,7 @@
                 padding: var(--bar-submenu-padding);
                 font-size: var(--bar-submenu-font-size);
                 font-family: var(--bar-submenu-font-family);
-                border-left: 1px solid var(--bar-rootmenu-border-color);
+                /* border-left: 1px solid var(--bar-rootmenu-border-color); */
 
                 /* icon and text */
                 &>div {
@@ -204,6 +201,20 @@
             &:hover {
                 cursor: pointer;
                 scale: 1.1;
+            }
+        }
+    }
+
+    /* accordion menus which its submenus has opened */
+    & ul.bar-menu-container:has(>.bar-submenu-container.submenu-opened) {
+        &>li.bar-accordion-menu {
+            /* box-shadow: 0px 1px 7px -2px var(--bar-accordion-menu-box-shadow-color); */
+
+            & a {
+                text-decoration: underline;
+                text-decoration-thickness: 2px;
+                text-decoration-style: solid;
+                text-underline-offset: 0.4em;
             }
         }
     }

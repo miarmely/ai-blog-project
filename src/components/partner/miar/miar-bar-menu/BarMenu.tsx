@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
 import { Menu as AccordionMenuIcon, type LucideIcon, icons } from "lucide-react"
-import { CaseConverter } from "../../../libs/miar-converter";
+import { CaseConverter } from "../../../../libs/miar-converter";
 import "./BarMenu.css";
 
 //////////////// INTERFACES ////////////////
