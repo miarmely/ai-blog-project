@@ -1,6 +1,6 @@
 import { OneDash } from "../miar/miar-dash/OneDash";
 import "./LatestNews.css";
-import { SocialMediaIconBox, SocialMediaIcon } from "./SocialMediaIcon";
+import { SocialMediaIconBox, SocialMediaIcon } from "../partner/SocialMediaIcon";
 
 export default function LatestNews() {
     return (
@@ -16,7 +16,10 @@ export default function LatestNews() {
                     <OneDash width="30px" />
                 </div>
 
-                <SocialMediaIconBox size="25px">
+                <SocialMediaIconBox
+                    size="25px"
+                    iconColor="white"
+                >
                     <SocialMediaIcon name="instagram" />
                     <SocialMediaIcon name="x" />
                     <SocialMediaIcon name="facebook" />

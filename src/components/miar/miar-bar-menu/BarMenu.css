@@ -82,11 +82,11 @@
         /* bar-menu + bar-submenu-container */
         &>li {
             list-style-type: none;
-            border-bottom: 1px solid var(--bar-rootmenu-border-color);
         }
 
         &>li.bar-menu {
             cursor: pointer;
+            border-bottom: 1px solid var(--bar-rootmenu-border-color);
 
             /* icon and text */
             &>div {
@@ -142,6 +142,11 @@
                     }
                 }
             }
+        }
+
+        /* first submenu container of root menus */
+        &>li.bar-submenu-container {
+            border-bottom: 1px solid var(--bar-submenu-border-color);
         }
     }
 

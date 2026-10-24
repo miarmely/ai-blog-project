@@ -39,6 +39,10 @@
   --bar-menu-bg-color: var(--color-1) !important;
   --bar-menu-border-color: var(--color-3) !important;
   --bar-accordion-menu-icon-color: var(--color-4) !important;
+
+  --sidebar-color: var(--color-2) !important;
+  --sidebar-bg-color: var(--color-1) !important;
+  --sidebar-border-color: var(--color-3) !important;
 }
 
 #root.dark {
@@ -49,6 +53,13 @@
     color: var(--color-2);
     background-color: var(--color-1);
   }
+}
+
+/* disabled elements */
+[aria-disabled=true] {
+  pointer-events: none;
+  user-select: none;
+  filter: grayscale(100%) opacity(50%);
 }
 
 /* Small Laptop: 1024px+ */

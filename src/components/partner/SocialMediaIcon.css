@@ -1,0 +1,44 @@
+:root {
+    --social-media-icon-size: 20px;
+    --social-media-icon-padding: 0px;
+    --social-media-icon-gap: 4px;
+    --social-media-icon-bg-color: transparent;
+    --social-media-icon-border-radius: 10px;
+    /* ICON COLOR =>  1: "white" || 0: "black" */
+    --social-media-icon-color-white: 1;
+}
+
+.social-media-icon-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--social-media-icon-gap);
+
+    &>.social-media-icon {
+        &>a {
+            width: var(--social-media-icon-size);
+            height: var(--social-media-icon-size);
+            padding: var(--social-media-icon-padding);
+            display: block;
+            background-color: var(--social-media-icon-bg-color);
+            border-radius: var(--social-media-icon-border-radius);
+
+            &>img {
+                width: stretch;
+                height: stretch;
+
+                /* convert color to black */
+                filter: brightness(0) invert(0);
+            }
+        }
+    }
+}
+
+#root.dark .social-media-icon-box {
+
+    &>.social-media-icon {
+        &>img {
+            /* convert color to white */
+            filter: invert(1);
+        }
+    }
+}

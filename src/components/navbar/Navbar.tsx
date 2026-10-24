@@ -2,22 +2,19 @@ import "./Navbar.css"
 import { MenuIcon, SearchIcon } from "lucide-react";
 import { BarMenu, BarMenuBox } from "../miar/miar-bar-menu/BarMenu";
 import React from "react";
-
-type Setter<T> = React.Dispatch<React.SetStateAction<T>>;
+import type { Setter } from "../../models/types";
 
 export interface NavbarProps {
     logoImgSrc: string,
     darkModeIcon: React.JSX.Element,
+    setIsSidebarOpen: Setter<boolean>
 }
 
 export default function Navbar({
     logoImgSrc,
-    darkModeIcon
+    darkModeIcon,
+    setIsSidebarOpen
 }: NavbarProps) {
-    const toggleSidebar = (event: React.MouseEvent): void => {
-
-    };
-
     return (
         <nav id="main-navbar">
             <div className="logo">
@@ -77,7 +74,11 @@ export default function Navbar({
                 {darkModeIcon}
                 <SearchIcon />
                 <button className="btn-signin" type="button">Sign In</button>
-                <MenuIcon />
+
+                <MenuIcon
+                    className="sidebar-icon"
+                    onClick={() => setIsSidebarOpen(prev => !prev)}
+                />
             </div>
         </nav>
     );

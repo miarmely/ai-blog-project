@@ -3,7 +3,6 @@
     --color: var(--color-2);
     --bg-color: var(--color-1);
     --font-size: 12px;
-    --social-media-icon-size: 20px;
     --latest-news-vertical-line-space: 5px;
 
     display: flex;
@@ -64,14 +63,9 @@
         }
 
         &>.social-media-icon-box {
-            display: flex;
-            gap: 4px;
-            flex-wrap: wrap;
-
             &>.social-media-icon {
                 &>img {
-                    width: var(--social-media-icon-size);
-                    height: var(--social-media-icon-size);
+                    /* convert to white */
                     filter: brightness(0) invert(1);
                 }
             }

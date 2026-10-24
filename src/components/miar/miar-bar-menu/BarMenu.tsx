@@ -15,7 +15,7 @@ export interface MenuProps {
     href: string,
     iconClass?: string,  // for "dynamic" icon assignment. (example icon-names stores on db.)
     LucideIcon?: LucideIcon,  // for "static" icon assigment.
-    children?: ReactNode[]
+    children?: ReactNode
 }
 
 interface SingleMenuProps {
@@ -65,10 +65,9 @@ export function BarMenu({
     children
 }: MenuProps) {
     const submenus = children;
-    const hasSubmenus = submenus && submenus.length > 0;
     const Icon = LucideIcon || getLucideIcon(iconClass);
 
-    return (!hasSubmenus ?
+    return (!submenus ?
         <SingleMenu
             name={name}
             href={href}

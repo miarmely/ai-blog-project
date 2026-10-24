@@ -1,34 +1,86 @@
+import "./Sidebar.css";
 import Logo from "./Logo";
-import { BarMenu, BarMenuBox } from "../miar/miar-bar-menu/BarMenu";
-import "./css/Sidebar.css";
+import type { Setter } from "../../models/types";
+import { TwoDash } from "../miar/miar-dash/TwoDash";
+import { MailIcon, MapPinIcon, PhoneCallIcon } from "lucide-react";
+import { GeneralInfo } from "./GeneralInfo";
+import { SocialMediaIcon, SocialMediaIconBox } from "../partner/SocialMediaIcon";
 
 interface SidebarProps {
     logoImgSrc: string,
-    logoText?: string
+    logoText?: string,
+    setIsSidebarOpen: Setter<boolean>
 }
 
 export default function Sidebar({
     logoImgSrc,
-    logoText
+    logoText,
+    setIsSidebarOpen
 }: SidebarProps
 ) {
     return (
-        <aside className="bar-box">
-            <Logo
-                logoImgSrc={logoImgSrc}
-                logoText={logoText}
-            />
+        <div id="main-sidebar">
+            <div className="curtain"></div>
 
-            <BarMenuBox boxType="vertical">
-                <BarMenu name="Home 1" href="#" />
-                <BarMenu name="Home 2" href="#" />
-                <BarMenu name="Home 3" href="#" />
+            <aside>
+                <Logo
+                    logoImgSrc={logoImgSrc}
+                    logoText={logoText}
+                    setIsSidebarOpen={setIsSidebarOpen}
+                />
 
-                <BarMenu name="Home 3" href="#">
-                    <BarMenu name="Home 3.1" href="#" />
-                    <BarMenu name="Home 3.2" href="#" />
-                </BarMenu>
-            </BarMenuBox>
-        </aside>
+                <div className="about-us">
+                    <p >
+                        Welcome to <strong>Miar News**</strong>, where innovation meets curiosity.
+                        Explore the latest breakthroughs in artificial intelligence,
+                        discover emerging technologies, and uncover the stories shaping our digital future.
+                        From expert insights to AI-powered perspectives, we bring you fresh ideas,
+                        inspiring discoveries, and the knowledge to stay one step ahead.
+                    </p>
+                </div>
+
+                <div className="get-in-touch">
+                    <div>
+                        <h2>Get In Touch</h2>
+                        <TwoDash width="170px" />
+                    </div>
+
+                    <div className="general-info-box">
+                        <GeneralInfo
+                            lucideIcon={<MapPinIcon />}
+                            title="Addres"
+                            content="06 Mymen KR, New York City"
+                        />
+
+                        <GeneralInfo
+                            lucideIcon={<MailIcon />}
+                            title="Email"
+                            content="mert.akdemir.info@gmail.com"
+                        />
+
+                        <GeneralInfo
+                            lucideIcon={<PhoneCallIcon />}
+                            title="Phone"
+                            content="+90599 999 99 99"
+                        />
+                    </div>
+                </div>
+
+                <SocialMediaIconBox
+                    gap="10px"
+                    size="25px"
+                    padding="15px"
+                    bgColor="#34a7ff"
+                    iconColor="white"
+                >
+                    <SocialMediaIcon name="instagram" />
+                    <SocialMediaIcon name="x" />
+                    <SocialMediaIcon name="facebook" />
+                    <SocialMediaIcon name="youtube" />
+                    <SocialMediaIcon name="linkedin" />
+                    <SocialMediaIcon name="pinterest" />
+                </SocialMediaIconBox>
+            </aside>
+        </div>
     );
 }
