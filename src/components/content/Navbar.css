@@ -32,7 +32,6 @@
         }
     }
 
-
     &>.search {
         padding: 20px 0px;
         display: flex;
@@ -49,6 +48,7 @@
 }
 
 
+/* 0px and above */
 @media(max-width:119px) {
     #main-navbar {
         &>.logo {
@@ -138,3 +138,25 @@
         }
     }
 }
+
+/* large mobile: 480px+ */
+@media(min-width:480px) {}
+
+/* Tablet : 768px+ */
+@media(min-width:768px) {
+    #main-navbar {
+        &>.bar-menu-box {
+            --is-vertical: ;
+            --is-horizontal: initial;
+        }
+    }
+}
+
+/* Small Laptop: 1024px+ */
+@media(min-width:1024px) {}
+
+/* Laptop | Large Laptop: 768px+ */
+@media(min-width:1280px) {}
+
+/* Ultra Wide */
+@media(min-width:1920px) {}

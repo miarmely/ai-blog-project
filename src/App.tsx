@@ -1,7 +1,6 @@
 import './App.css'
 import { useEffect, useRef, useState } from 'react';
 import LatestNews from './components/latest-news/LatestNews'
-import Navbar from './components/content/Navbar'
 import Sidebar from './components/sidebar/Sidebar'
 import { MoonIcon, SunIcon } from 'lucide-react';
 import type { Setter } from './models/types';
