@@ -7,40 +7,67 @@
     --main-navbar-padding-l: 10px;
 }
 
-/* Default */
+/* Default: 0px and above */
 #main-navbar {
     width: stretch;
     padding: var(--main-navbar-padding-t) var(--main-navbar-padding-r) var(--main-navbar-padding-b) var(--main-navbar-padding-l);
-    /* position: absolute; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     color: var(--color-1);
     background-color: var(--color-2);
+    font-size: 14px;
 
     &>div {
         width: stretch;
     }
 
-    &>.logo {
-        text-align: left;
-        user-select: none;
+    &>#logo-and-menus {
+        display: flex;
+        flex-direction: column;
 
-        & img {
-            width: 300px;
+        & .logo {
+            text-align: left;
+            user-select: none;
+            width: clamp(1px, 75%, 300px);
+
+            & img {
+                width: stretch;
+                /* width: clamp(1px, 75%, 300px); */
+            }
+        }
+
+        & .bar-menu-box {
+            --bar-menu-box-font-size: 1em;
+
+            --bar-menu-padding-t: 7px;
+            --bar-menu-padding-b: 7px;
+            --bar-menu-padding-r: 5px;
+            --bar-menu-padding-l: 5px;
+
+            --bar-submenu-padding-inline-start: 1em;
+
+            --bar-accordion-menu-icon-width: 1em;
+            --bar-accordion-menu-icon-height: 1em;
         }
     }
 
-    &>.search {
+    & .search {
         padding: 20px 0px;
         display: flex;
-        gap: 20px;
-        justify-content: left;
+        gap: 15px;
+        justify-content: flex-start;
+        align-items: center;
         user-select: none;
 
-        &>.lucide:hover,
-        &>.btn-signin:hover {
+        & .lucide {
+            width: 1.75em;
+            height: 1.75em;
+        }
+
+        & .lucide:hover,
+        & .btn-signin:hover {
             cursor: pointer;
             scale: 1.1;
         }
@@ -48,106 +75,33 @@
 }
 
 
-/* 0px and above */
-@media(max-width:119px) {
-    #main-navbar {
-        &>.logo {
-            & img {
-                width: 75px;
-            }
-        }
-    }
-}
-
-@media(min-width:120px) {
-    #main-navbar {
-        &>.logo {
-            & img {
-                width: 100px;
-            }
-        }
-    }
-}
-
-@media(min-width:150px) {
-    #main-navbar {
-        &>.logo {
-            & img {
-                width: 130px;
-            }
-        }
-    }
-}
-
-@media(min-width:170px) {
-    #main-navbar {
-        &>.logo {
-            & img {
-                width: 150px;
-            }
-        }
-    }
-}
-
-@media(min-width:200px) {
-    #main-navbar {
-        &>.logo {
-            & img {
-                width: 175px;
-            }
-        }
-    }
-}
-
-@media(min-width:230px) {
-    #main-navbar {
-        &>.logo {
-            & img {
-                width: 200px;
-            }
-        }
-    }
-}
-
-@media(min-width:260px) {
-    #main-navbar {
-        &>.logo {
-            & img {
-                width: 240px;
-            }
-        }
-    }
-}
-
-@media(min-width:290px) {
-    #main-navbar {
-        &>.logo {
-            & img {
-                width: 270px;
-            }
-        }
-    }
-}
-
-@media(min-width:350px) {
-    #main-navbar {
-        &>.logo {
-            & img {
-                width: 300px;
-            }
-        }
-    }
-}
-
 /* large mobile: 480px+ */
 @media(min-width:480px) {}
 
 /* Tablet : 768px+ */
 @media(min-width:768px) {
     #main-navbar {
-        &>.bar-menu-box {
-            --is-vertical: ;
-            --is-horizontal: initial;
+        --main-navbar-padding-r: 20px;
+        --main-navbar-padding-l: 20px;
+
+        flex-direction: row;
+        font-size: 15px;
+
+        & #logo-and-menus {
+            width: min-content;
+
+            & .logo {}
+
+            & .bar-menu-box {
+                --bar-menu-box-is-vertical: ;
+                --bar-menu-box-is-horizontal: initial;
+                --bar-menu-box-gap: 20px;
+            }
+        }
+
+        & .search {
+            justify-content: flex-end;
+            gap: 20px;
         }
     }
 }
@@ -155,8 +109,24 @@
 /* Small Laptop: 1024px+ */
 @media(min-width:1024px) {}
 
-/* Laptop | Large Laptop: 768px+ */
-@media(min-width:1280px) {}
+/* Laptop | Large Laptop: 1280px+ */
+@media(min-width:1280px) {
+    #main-navbar {
+        & #logo-and-menus {
+            flex-direction: row;
+            align-items: center;
+
+            & .bar-menu-box {}
+        }
+
+        & .search {
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+
+}
 
 /* Ultra Wide */
 @media(min-width:1920px) {}

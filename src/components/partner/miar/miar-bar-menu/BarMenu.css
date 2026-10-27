@@ -1,6 +1,14 @@
 /* all variables */
-:root {
-    /* -------- 1.2) MENUS ----------*/
+.bar-menu-box {
+    /* -------- 1) MENU BOX ----------*/
+
+    --bar-menu-box-is-vertical: initial;
+    --bar-menu-box-is-horizontal: ;
+    --bar-menu-box-gap: 0px;
+    --bar-menu-box-font-size: 14px;
+
+
+    /* -------- 1.1) MENUS ----------*/
 
     --bar-menu-direction: ltr;
     --bar-menu-color: black;
@@ -18,7 +26,8 @@
     --bar-menu-icon-and-text-gap: 15px;
     --bar-menu-icon-size: 23px;
 
-    /* -------- 1.2.1) ROOT MENUS ----------*/
+
+    /* -------- 1.1.1) ROOT MENUS ----------*/
 
     --bar-rootmenu-direction: var(--bar-menu-direction);
     /* padding start of root "ul.bar-menu-container"s */
@@ -35,12 +44,12 @@
     --bar-rootmenu-border-color: var(--bar-menu-border-color);
 
 
-    /* -------- 1.2.2) SUBMENUS  ----------*/
+    /* -------- 1.1.2) SUBMENUS  ----------*/
 
     --bar-submenu-direction: var(--bar-menu-direction);
     /* padding start of "bar-submenu-container" */
     --bar-submenu-padding-inline-start: 15px;
-    --bar-submenu-padding: 10px var(--bar-menu-padding-r) 10px var(--bar-menu-padding-l);
+    --bar-submenu-padding: calc(var(--bar-menu-padding-t) / 1.8) var(--bar-menu-padding-r) calc(var(--bar-menu-padding-t) / 1.8) var(--bar-menu-padding-l);
     --bar-submenu-color: var(--bar-menu-color);
     --bar-submenu-font-size: 1.2em;
     --bar-submenu-font-family: var(--bar-menu-font-family);
@@ -51,11 +60,11 @@
     --bar-submenu-border-color: var(--bar-menu-border-color);
 
 
-    /* -------- 1.2.3) ACCORDION MENUS ----------*/
-
+    /* -------- 1.1.3) ACCORDION MENUS ----------*/
     --bar-accordion-menu-icon-width: 20px;
     --bar-accordion-menu-icon-height: 20px;
     --bar-accordion-menu-icon-color: gray;
+    --bar-accordion-menu-icon-and-text-gap: 15px;
     --bar-accordion-menu-animation-duration: 0.4s;
     /* animation start point on x axis*/
     --bar-accordion-menu-animation-translate-x: 25%;
@@ -63,20 +72,20 @@
     --bar-accordion-menu-animation-opening-start-point-x: -1;
     /* 1==right | -1==left (on x axis)*/
     --bar-accordion-menu-animation-closing-start-point-x: -1;
-    /*box shadow color of accordion menus which its submenus has opened */
-    --bar-accordion-menu-box-shadow-color: gray;
 }
 
 /* Default: vertical menus */
 .bar-menu-box {
-    --is-vertical: initial;
-    --is-horizontal: ;
+    --is-vertical: var(--bar-menu-box-is-vertical);
+    --is-horizontal: var(--bar-menu-box-is-horizontal);
     --is-menu-border-left-active: ;
 
+    width: var(--is-vertical, stretch) var(--is-horizontal, min-content);
+    padding: 0px;
     display: flex;
     flex-direction: var(--is-vertical, column) var(--is-horizontal, row);
-    padding: 0px;
-    font-size: 15px;
+    gap: var(--bar-menu-box-gap);
+    font-size: var(--bar-menu-box-font-size);
 
     /* root + submenus */
     & ul.bar-menu-container {
@@ -204,7 +213,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
+        gap: var(--bar-accordion-menu-icon-and-text-gap);
 
         /* icon */
         &>svg.lucide {
@@ -222,8 +231,6 @@
     /* accordion menus which its submenus has opened */
     & ul.bar-menu-container:has(>.bar-submenu-container.submenu-opened) {
         &>li.bar-accordion-menu {
-            /* box-shadow: 0px 1px 7px -2px var(--bar-accordion-menu-box-shadow-color); */
-
             & a {
                 text-decoration: underline;
                 text-decoration-thickness: 2px;
