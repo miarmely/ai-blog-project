@@ -1,22 +1,26 @@
-/* ------------ DEFAULT: WHITE MODE ------------ */
 :root {
   --color-1: black;
   --color-2: white;
   --color-3: gray;
   --color-4: #acacac;
 
-  /* set bar menus */
-  --bar-menu-color: var(--color-1) !important;
-  --bar-menu-bg-color: var(--color-2) !important;
-  --bar-menu-border-color: var(--color-3) !important;
-  --bar-accordion-menu-icon-color: var(--color-4) !important;
+  --color-text: black;
+  --color-bg: white;
+  --color-border: gray;
+  --color-border-2: #acacac;
 }
 
-#root {
-  background-color: var(--color-2);
-  color: var(--color-1);
+:root:has(#root.dark) {
+  --color-text: white;
+  --color-bg: black;
+  --color-border: gray;
+  --color-border-2: #acacac;
+}
 
-  &>#latest-news-navbar {}
+
+#root {
+  background-color: var(--color-bg);
+  color: var(--color-text);
 
   &>#content {
     position: relative;
@@ -25,29 +29,13 @@
       /* padding-top: calc(var(--main-navbar-padding-t) + var(--main-navbar-height) + var(--main-navbar-padding-b)); */
     }
   }
-}
 
-/* ------------ DARK MODE ------------*/
-:root:has(#root.dark) {
-  /* set bar menus */
-  --bar-menu-color: var(--color-2) !important;
-  --bar-menu-bg-color: var(--color-1) !important;
-  --bar-menu-border-color: var(--color-3) !important;
-  --bar-accordion-menu-icon-color: var(--color-4) !important;
-  --bar-accordion-menu-box-shadow-color: var(--color-2) !important;
-
-  --sidebar-color: var(--color-2) !important;
-  --sidebar-bg-color: var(--color-1) !important;
-  --sidebar-border-color: var(--color-3) !important;
-}
-
-#root.dark {
-  background-color: var(--color-1);
-  color: var(--color-2);
-
-  & #main-navbar {
-    color: var(--color-2);
-    background-color: var(--color-1);
+  /* navbar or sidebar menus */
+  & .bar-menu-box {
+    --bar-menu-color: var(--color-text) !important;
+    --bar-menu-bg-color: var(--color-bg) !important;
+    --bar-menu-border-color: var(--color-border) !important;
+    --bar-menu-border-color-2: var(--color-border-2) !important;
   }
 }
 
@@ -58,7 +46,9 @@
   filter: grayscale(100%) opacity(50%);
 }
 
+
 /* ------------ RESPONSIVE DESIGN ------------*/
+
 /* Small Laptop: 1024px+ */
 @media(min-width:1024px) {
 

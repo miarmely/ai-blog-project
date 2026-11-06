@@ -1,10 +1,23 @@
-/* Default: Mobile first (0px and above)*/
-#latest-news-navbar {
-    --color: var(--color-2);
-    --bg-color: var(--color-1);
-    --font-size: 12px;
-    --latest-news-vertical-line-space: 5px;
+/* --------- DEFAULT:  (0px and above) --------- */
 
+/* settings */
+#root {
+
+    /* white mode */
+    & #latest-news-navbar {
+        --color: white;
+        --bg-color: black;
+        --font-size: 14px;
+        --latest-news-vertical-line-space: 5px;
+    }
+
+    /* dark mode */
+    &.dark #latest-news-navbar {
+        --bg-color: #000026;
+    }
+}
+
+#latest-news-navbar {
     display: flex;
     flex-direction: column;
     padding: 10px 10px;
@@ -73,16 +86,13 @@
     }
 }
 
-#root.dark #latest-news-navbar {
-    --color: var(--color-2);
-    --bg-color: var(--color-4);
-}
 
+/* --------- RESPONSIVE DESIGN --------- */
 
 /* large mobile: 480px+ */
 @media(min-width:480px) {
     #latest-news-navbar {
-        font-size: 13px;
+        font-size: 15px;
         gap: 1.5em;
 
         &>.nav-left {
@@ -111,7 +121,7 @@
         --social-media-icon-preferred-max-column: 8;
         --social-media-icon-preferred-max-row: 2;
 
-        font-size: 14px;
+        font-size: 16px;
         flex-direction: row;
         justify-content: space-between;
 
@@ -121,7 +131,6 @@
             h2 {
                 white-space: nowrap;
             }
-
 
             /* latest news */
             h4 {
@@ -180,19 +189,4 @@
             }
         }
     }
-}
-
-/* Small Laptop: 1024px+ */
-@media(min-width:1024px) {
-    #latest-news-navbar {}
-}
-
-/* Laptop | Large Laptop: 768px+ */
-@media(min-width:1280px) {
-    #latest-news-navbar {}
-}
-
-/* Ultra Wide */
-@media(min-width:1920px) {
-    #latest-news-navbar {}
 }

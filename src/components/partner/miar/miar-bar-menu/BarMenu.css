@@ -1,4 +1,32 @@
-/* all variables */
+/* color settings */
+.bar-menu-box {
+    /* -------- DEFAULT: MENUS ----------*/
+
+    --bar-menu-color: black;
+    --bar-menu-bg-color: white;
+    --bar-menu-border-color: gray;
+    --bar-menu-border-color-2: lightgray;
+
+
+    /* -------- ROOT MENUS ----------*/
+
+    --bar-rootmenu-color: var(--bar-menu-color);
+    --bar-rootmenu-border-color: var(--bar-menu-border-color);
+
+
+    /* -------- SUBMENUS  ----------*/
+
+    --bar-submenu-color: var(--bar-menu-color);
+    --bar-submenu-border-color: var(--bar-menu-border-color);
+
+
+    /* -------- ACCORDION MENUS ----------*/
+
+    --bar-accordion-menu-icon-color: var(--bar-menu-border-color-2);
+}
+
+
+/* general settings */
 .bar-menu-box {
     /* -------- 1) MENU BOX ----------*/
 
@@ -11,9 +39,6 @@
     /* -------- 1.1) MENUS ----------*/
 
     --bar-menu-direction: ltr;
-    --bar-menu-color: black;
-    --bar-menu-bg-color: white;
-    --bar-menu-border-color: gray;
     --bar-menu-font-size: 1.35em;
     --bar-menu-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     /* padding start of root "ul.bar-menu-container"s */
@@ -34,14 +59,12 @@
     --bar-rootmenu-padding-inline-start: var(--bar-menu-padding-inline-start);
     /* padding of root "li.barmenu"s */
     --bar-rootmenu-padding: var(--bar-menu-padding-t) var(--bar-menu-padding-r) var(--bar-menu-padding-b) var(--bar-menu-padding-l);
-    --bar-rootmenu-color: var(--bar-menu-color);
     --bar-rootmenu-font-size: var(--bar-menu-font-size);
     --bar-rootmenu-font-family: var(--bar-menu-font-family);
     --bar-rootmenu-icon-and-text-gap: var(--bar-menu-icon-and-text-gap);
     --bar-rootmenu-icon-and-text-direction: var(--bar-rootmenu-direction);
     --bar-rootmenu-icon-width: var(--bar-menu-icon-size);
     --bar-rootmenu-icon-height: var(--bar-menu-icon-size);
-    --bar-rootmenu-border-color: var(--bar-menu-border-color);
 
 
     /* -------- 1.1.2) SUBMENUS  ----------*/
@@ -50,20 +73,18 @@
     /* padding start of "bar-submenu-container" */
     --bar-submenu-padding-inline-start: 15px;
     --bar-submenu-padding: calc(var(--bar-menu-padding-t) / 1.8) var(--bar-menu-padding-r) calc(var(--bar-menu-padding-t) / 1.8) var(--bar-menu-padding-l);
-    --bar-submenu-color: var(--bar-menu-color);
     --bar-submenu-font-size: 1.2em;
     --bar-submenu-font-family: var(--bar-menu-font-family);
     --bar-submenu-icon-and-text-gap: var(--bar-menu-icon-and-text-gap);
     --bar-submenu-icon-and-text-direction: var(--bar-submenu-direction);
     --bar-submenu-icon-width: calc(var(--bar-menu-icon-size) / 1.25);
     --bar-submenu-icon-height: calc(var(--bar-menu-icon-size) / 1.25);
-    --bar-submenu-border-color: var(--bar-menu-border-color);
 
 
     /* -------- 1.1.3) ACCORDION MENUS ----------*/
+
     --bar-accordion-menu-icon-width: 20px;
     --bar-accordion-menu-icon-height: 20px;
-    --bar-accordion-menu-icon-color: gray;
     --bar-accordion-menu-icon-and-text-gap: 15px;
     --bar-accordion-menu-animation-duration: 0.4s;
     /* animation start point on x axis*/

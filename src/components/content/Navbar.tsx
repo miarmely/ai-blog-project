@@ -1,5 +1,5 @@
 import "./Navbar.css"
-import { BadgeInfoIcon, CircleQuestionMarkIcon, InfoIcon, MenuIcon, SearchIcon } from "lucide-react";
+import { BadgeInfoIcon, SearchIcon } from "lucide-react";
 import { BarMenu, BarMenuBox } from "../partner/miar/miar-bar-menu/BarMenu";
 import React from "react";
 import type { Setter } from "../../models/types";
