@@ -9,7 +9,7 @@ RUN npm ci
 
 COPY . .
 
-RUN cpm run build
+RUN npm run build
 
 
 # stage 2: serve static files
