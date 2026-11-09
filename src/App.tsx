@@ -61,14 +61,14 @@ function setSidebar(
         const aside: HTMLElement = sidebar.querySelector("aside")!;
 
         // "1st": hide "aside" when "closing animation" of "aside" finished
-        aside.addEventListener("animationend", (event) => {
+        aside.addEventListener("animationend", () => {
           // if "closing" animation has finished
           if (sidebar.classList.contains("closing"))
             aside.style.setProperty("display", "none");
         });
 
         // "2nd": remove "opening/closing" classes when "closing animation" of "curtain" finished
-        curtain.addEventListener("animationend", (event) => {
+        curtain.addEventListener("animationend", () => {
           // enable "sidebar icons"
           sidebarIcons.forEach(icon =>
             icon.setAttribute("aria-disabled", "false"));

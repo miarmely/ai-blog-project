@@ -17,46 +17,57 @@
 #main-navbar {
     width: stretch;
     padding: var(--main-navbar-padding-t) var(--main-navbar-padding-r) var(--main-navbar-padding-b) var(--main-navbar-padding-l);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
     color: var(--main-navbar-color);
     background-color: var(--main-navbar-bg-color);
     font-size: 14px;
 
-    &>div {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; */
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+
+    /* &>div {
         width: stretch;
+    } */
+
+    &>.menus-and-search {
+        display: none;
+
+        &.open {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
-    &>#logo-and-menus {
+    & .logo {
+        text-align: left;
+        user-select: none;
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
 
-        & .logo {
-            text-align: left;
-            user-select: none;
+        & img {
             width: clamp(1px, 75%, 300px);
-
-            & img {
-                width: stretch;
-                /* width: clamp(1px, 75%, 300px); */
-            }
         }
 
-        & .bar-menu-box {
-            --bar-menu-box-font-size: 1em;
-
-            --bar-menu-padding-t: 7px;
-            --bar-menu-padding-b: 7px;
-            --bar-menu-padding-r: 5px;
-            --bar-menu-padding-l: 5px;
-
-            --bar-submenu-padding-inline-start: 1em;
-
-            --bar-accordion-menu-icon-width: 1em;
-            --bar-accordion-menu-icon-height: 1em;
+        & .lucide:hover {
+            cursor: pointer;
+            scale: 1.1;
         }
+    }
+
+    & .bar-menu-box {
+        --bar-menu-box-font-size: 1em;
+        --bar-menu-padding-t: 7px;
+        --bar-menu-padding-b: 7px;
+        --bar-menu-padding-r: 5px;
+        --bar-menu-padding-l: 5px;
+        --bar-submenu-padding-inline-start: 1em;
+        --bar-accordion-menu-icon-width: 1em;
+        --bar-accordion-menu-icon-height: 1em;
     }
 
     & .search {

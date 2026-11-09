@@ -1,7 +1,7 @@
 import "./Navbar.css"
-import { BadgeInfoIcon, SearchIcon } from "lucide-react";
+import { BadgeInfoIcon, MenuIcon, SearchIcon } from "lucide-react";
 import { BarMenu, BarMenuBox } from "../partner/miar/miar-bar-menu/BarMenu";
-import React from "react";
+import React, { useState } from "react";
 import type { Setter } from "../../models/types";
 
 export interface NavbarProps {
@@ -15,14 +15,18 @@ export default function Navbar({
     darkModeIcon,
     setIsSidebarOpen
 }: NavbarProps) {
+    const [isNavbarMenuOpened, setIsNavbarMenuOpened] = useState(false);
+
     return (
         <nav id="main-navbar">
-            <div id="logo-and-menus">
-                <div className="logo">
-                    <img id="sidebar-logo-img" src={logoImgSrc} />
-                </div>
+            <div className="logo">
+                <img id="sidebar-logo-img" src={logoImgSrc} />
 
-                <BarMenuBox boxType="vertical" >
+                <MenuIcon onClick={() => setIsNavbarMenuOpened(prev => !prev)} />
+            </div>
+
+            <div className={"menus-and-search" + (isNavbarMenuOpened ? " open" : "")}>
+                <BarMenuBox boxType="vertical">
                     <BarMenu name="Home" href="#">
                         <BarMenu name="Home 1" href="#">
                             <BarMenu name="Home 2" href="#"></BarMenu>
@@ -70,17 +74,17 @@ export default function Navbar({
                     <BarMenu name="Blog" href="#"></BarMenu>
                     <BarMenu name="Posts" href="#"></BarMenu>
                 </BarMenuBox>
-            </div>
 
-            <div className="search">
-                {darkModeIcon}
-                <SearchIcon />
-                <button className="btn-signin" type="button">Sign In</button>
+                <div className="search">
+                    {darkModeIcon}
+                    <SearchIcon />
+                    <button className="btn-signin" type="button">Sign In</button>
 
-                <BadgeInfoIcon
-                    className="sidebar-icon"
-                    onClick={() => setIsSidebarOpen(prev => !prev)}
-                />
+                    <BadgeInfoIcon
+                        className="sidebar-icon"
+                        onClick={() => setIsSidebarOpen(prev => !prev)}
+                    />
+                </div>
             </div>
         </nav>
     );

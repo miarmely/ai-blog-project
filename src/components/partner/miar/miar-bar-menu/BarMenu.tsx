@@ -87,7 +87,7 @@ function SingleMenu({
     href,
     Icon
 }: SingleMenuProps) {
-    const handleSingleMenuClick = (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+    const handleSingleMenuClick = () => {
         // const a = event.currentTarget.children[0];
 
         // setMenuPath && setMenuPath(a.textContent);
